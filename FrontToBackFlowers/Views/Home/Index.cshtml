@@ -5,6 +5,7 @@
     var sliderImages = homeViewModel.SliderImages;
     var categories = homeViewModel.Categories;
     var products = homeViewModel.Products;
+    var flowerExperts = homeViewModel.FlowerExperts;
 } 
 
 
@@ -36,11 +37,11 @@
                 </div>
             </div>
         </section>
-
+        <!--Done-->
         <!-- SLIDER END -->
 
         <!-- PRODUCTS START -->
-
+       <!--Done-->
         <section id="products">
             <div class="container">
                 <div class="row pt-5">
@@ -77,22 +78,8 @@
                 <div class="row">
                     @foreach (var product in products)
                     {
-                         <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                        <div class="product-item text-center" data-id="@product.Category.Name.ToLower()">
-                            <div class="img">
-                                <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
-                                    <img src="~/img/@product.ImageUrl" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="title mt-3">
-                                <h6>@product.Name</h6>
-                            </div>
-                            <div class="price">
-                                <span class="text-black-50">Add to cart</span>
-                                <span class="text-black-50">$@product.Price</span>
-                            </div>
-                        </div>
-                    </div>
+                        @await Html.PartialAsync("_ProductPartialView", model:product)
+                       
                     }
                    
                 </div>
@@ -151,50 +138,24 @@
                     </div>
                 </div>
                 <div class="row pb-5">
-                    <div class="col-md-6 col-lg-3">
+                    @foreach (var flowerExpert in flowerExperts)
+                    {
+                          <div class="col-md-6 col-lg-3">
                         <div class="item text-center">
                             <div class="img">
-                                <img src="~/img/h3-team-img-1.png" class="img-fluid rounded-circle" alt="">
+                                <img src="~/img/@flowerExpert.ImageUrl" class="img-fluid rounded-circle" alt="">
                             </div>
                             <div class="text mt-3">
-                                <h6>CRYSTAL BROOKS</h6>
-                                <p class="text-black-50">Florist</p>
+                                <h6>@flowerExpert.Name</h6>
+                                <p class="text-black-50">@flowerExpert.Profession</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="item text-center">
-                            <div class="img">
-                                <img src="~/img/h3-team-img-2.png" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <div class="text mt-3">
-                                <h6>SHIRLEY HARRIS</h6>
-                                <p class="text-black-50">Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="item text-center">
-                            <div class="img">
-                                <img src="~/img/h3-team-img-3.png" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <div class="text mt-3">
-                                <h6>BEVERLY CLARK</h6>
-                                <p class="text-black-50">Florist</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="item text-center">
-                            <div class="img">
-                                <img src="~/img/h3-team-img-4.png" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <div class="text mt-3">
-                                <h6>AMANDA WATKINS</h6>
-                                <p class="text-black-50">Florist</p>
-                            </div>
-                        </div>
-                    </div>
+                    }
+                  
+                   
+
+
                     <div class="col-lg-3"></div>
                     <div class="col-lg-3"></div>
                     <div class="col-lg-3"></div>

@@ -19,6 +19,7 @@ namespace FrontToBackFlowers.Controllers
             var slider = _flowerDbContext.Sliders.SingleOrDefault();
             var categories = _flowerDbContext.Categories.ToList();
             var products = _flowerDbContext.Products.ToList();
+            var flowerExperts = _flowerDbContext.FlowerExperts.ToList();
 
             var homeViewModel = new HomeViewModel
             {
@@ -26,6 +27,7 @@ namespace FrontToBackFlowers.Controllers
                 Slider = slider,
                 Categories = categories,
                 Products = products,
+                FlowerExperts=flowerExperts
             };
             return View(homeViewModel);
         }
