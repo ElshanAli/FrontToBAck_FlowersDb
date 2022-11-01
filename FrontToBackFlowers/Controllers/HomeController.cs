@@ -1,6 +1,7 @@
 ﻿using FrontToBackFlowers.DAL;
 using FrontToBackFlowers.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FrontToBackFlowers.Controllers
 {
@@ -18,7 +19,7 @@ namespace FrontToBackFlowers.Controllers
             var sliderImages = _flowerDbContext.SliderImages.ToList();
             var slider = _flowerDbContext.Sliders.SingleOrDefault();
             var categories = _flowerDbContext.Categories.ToList();
-            var products = _flowerDbContext.Products.ToList();
+            var products = _flowerDbContext.Products.Include(c => c.Category).ToList();
             var flowerExperts = _flowerDbContext.FlowerExperts.ToList();
 
             var homeViewModel = new HomeViewModel

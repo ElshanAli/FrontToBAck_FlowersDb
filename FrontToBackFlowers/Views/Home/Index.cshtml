@@ -78,7 +78,7 @@
                 <div class="row">
                     @foreach (var product in products)
                     {
-                        @await Html.PartialAsync("_ProductPartialView", model:product)
+                        @await Html.PartialAsync("_ProductPartialView", product)
                        
                     }
                    
