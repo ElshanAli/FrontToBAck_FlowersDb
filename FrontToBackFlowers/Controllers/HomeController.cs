@@ -28,9 +28,17 @@ namespace FrontToBackFlowers.Controllers
                 Slider = slider,
                 Categories = categories,
                 Products = products,
-                FlowerExperts=flowerExperts
+                FlowerExperts = flowerExperts
             };
             return View(homeViewModel);
         }
+
+        public IActionResult Search(string searchProduct)
+        {
+            var products = _flowerDbContext.Products.Where(p => p.Name.ToLower().Contains(searchProduct.ToLower())).ToList();
+
+            return PartialView("_SearchProductPartialView", products);
+        }
     }
+
 }
