@@ -14,6 +14,17 @@ namespace FrontToBackFlowers
             builder.Services.AddDbContext<FlowerDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             
             var app = builder.Build();
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/ErrorPage");
+            }
+          
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/ErrorAction", "?code={0}");
+
             app.UseRouting();
             app.UseStaticFiles();
             
