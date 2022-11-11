@@ -1,0 +1,42 @@
+﻿@model List<SliderImage>
+
+<div class="row">
+
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Slide Images</h4>
+                <a asp-action="create" class="btn btn-success">Add Image</a>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var sliderImage in Model)
+                            {
+                                <tr>
+                                    <td><img style="width:100px; height:100px;  object-fit:fill;" src="~/img/@sliderImage.Name" /></td>
+                                  
+                                    <td>
+                                        <a class="btn btn-primary" asp-action="details" asp-route-id="@sliderImage.Id">Details</a>
+                                        <a class="btn btn-success" asp-action="update" asp-route-id="@sliderImage.Id">Update</a>
+                                      
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

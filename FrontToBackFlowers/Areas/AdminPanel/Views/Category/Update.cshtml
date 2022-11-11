@@ -1,0 +1,29 @@
+﻿@model CategoryUpdateModel;
+
+<div class="row">
+    <div class="col-md-9 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">CREATE CATEGORY</h4>
+
+                <form class="forms-sample" method="post" asp-action="Update">
+                    <div class="form-group">
+                        <label asp-for="Name">Category Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Enter the category name...">
+                        <br />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description">Category Description</label>
+                        <input asp-for="Description" class="form-control" placeholder="Enter the category description...">
+                        <br />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light" asp-action="Index">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

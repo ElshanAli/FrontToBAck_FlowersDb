@@ -1,7 +1,9 @@
 ﻿using FrontToBackFlowers.DAL;
+using FrontToBackFlowers.Models;
 using FrontToBackFlowers.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace FrontToBackFlowers.Controllers
 {
@@ -16,6 +18,7 @@ namespace FrontToBackFlowers.Controllers
 
         public IActionResult Index()
         {
+            
             var sliderImages = _flowerDbContext.SliderImages.ToList();
             var slider = _flowerDbContext.Sliders.SingleOrDefault();
             var categories = _flowerDbContext.Categories.ToList();
@@ -39,6 +42,7 @@ namespace FrontToBackFlowers.Controllers
 
             return PartialView("_SearchProductPartialView", products);
         }
+       
     }
 
 }

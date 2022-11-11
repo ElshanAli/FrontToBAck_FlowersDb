@@ -26,6 +26,8 @@ $(document).ready(function () {
         $(this).parent().next().slideToggle();
     })
 
+
+
     // SLIDER
 
     $(document).ready(function(){

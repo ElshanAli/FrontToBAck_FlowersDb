@@ -9,9 +9,15 @@
     <link rel="icon" href="~/img/favicon.png" sizes="192x192" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   
+     <link rel="stylesheet" href="~/cssCart/font-awesome.min.css">
+        <link rel="stylesheet" href="~/cssCart/linearicons.css">
+     <link rel="stylesheet" href="~/cssCart/themify-icons.css">
+    <link rel="stylesheet" href="~/cssCart/nice-select.css">
     <link rel="stylesheet" href="~/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="~/owlcarousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+      <link rel="stylesheet" href="~/cssCart/main.css">
     <title>Fiorello &#8211; A Flower Shop and Florist WooCommerce Theme</title>
 </head>
 
@@ -24,7 +30,7 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg d-flex d-lg-block justify-content-between d-xl-flex navbar-light py-3 py-lg-0">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                             <img src="~/img/logo.png" alt="" id="logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -157,12 +163,13 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item my-auto shop-cart">
-                                    <i class="fas fa-shopping-bag"></i>
+                                  <a asp-controller="Basket" asp-action="Index">  <i class="fas fa-shopping-bag"></i></a>
                                     <sup class="rounded-circle">0</sup>
                                     <span>CART ($0)</span>
-                                    <ul class="list-unstyled py-3">
-                                        <li class="">No products in the cart.</li>
-                                    </ul>
+                                   @* <ul class="list-unstyled py-3">
+                                        <li class="shop-carts">No products in the cart.</li>
+                                       
+                                    </ul>*@
                                 </li>
                             </ul>
                         </div>
@@ -388,10 +395,13 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e5e249fce2.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/964f041bb2.js" crossorigin="anonymous"></script>
     <script src="~/owlcarousel/owl.carousel.min.js"></script>
     <script src="~/js/script.js" asp-append-version="true"></script>
-      <script src="~/js/search.js" asp-append-version="true"></script>
-     <script src="~/js/load.js" asp-append-version="true"></script>
+    <script src="~/js/basket.js" asp-append-version="true"></script>
+    <script src="~/js/search.js" asp-append-version="true"></script>
+   
+     @RenderSection("scripts", false)
 </body>
 
 </html>
