@@ -1,9 +1,11 @@
 ﻿using FrontToBackFlowers.Models;
+using FrontToBackFlowers.Models.IdentityModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FrontToBackFlowers.DAL
 {
-    public class FlowerDbContext : DbContext
+    public class FlowerDbContext : IdentityDbContext<IdentityOfUser>
     {
         public FlowerDbContext(DbContextOptions options) : base(options)
         {

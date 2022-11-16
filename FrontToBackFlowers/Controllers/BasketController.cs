@@ -17,7 +17,7 @@ namespace FrontToBackFlowers.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var basketItems = GetBasketItems();
+            var basketItems =  GetBasketItems();
             return View(basketItems);
            
         }

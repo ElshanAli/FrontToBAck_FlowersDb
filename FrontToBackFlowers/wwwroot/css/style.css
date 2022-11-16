@@ -104,7 +104,7 @@ header nav ul li ul {
 }
 
 header nav ul li ul li {
-  padding: 5px 30px;
+  padding: 5px 30px !important;
 }
 
 header nav ul li ul li i {
@@ -137,7 +137,7 @@ header nav ul li ul .element ul {
 }
 
 header nav ul li .elements li {
-  text-align: right;
+  text-align: left;
 }
 
 header nav ul li .shop {
