@@ -78,7 +78,7 @@ namespace FrontToBackFlowers.Controllers
             };
 
             await _mailManager.SendEmailAsync(requestEmail);
-            return Redirect(nameof(Login));
+          
 
             //await _userManager.AddToRoleAsync(user, "Admin");
 
@@ -91,7 +91,7 @@ namespace FrontToBackFlowers.Controllers
                 return View();
             }
             await _signInManager.SignInAsync(user, false);
-            return RedirectToAction(nameof(Index), "Home");
+            return Redirect(nameof(Login));
         }
         public IActionResult Login()
         {
